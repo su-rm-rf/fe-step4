@@ -1,7 +1,7 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 
-export default function(mapper, mapFn, mapName=undefined) {
+export default function(mapper, mapFn, mapName: any=undefined) {
   const store = useStore()
   const storeFns = mapFn(mapper)
   

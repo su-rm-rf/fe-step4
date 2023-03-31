@@ -1,8 +1,8 @@
 <script setup lang="ts">
   import { useState, useGetters, useActions } from '@/hooks'
 
-  const { todoList }:any = useGetters('todo', ['todoList'])
-  const { todo_get, todo_toggle, todo_clear }:any = 
+  const { todoList }: any = useGetters('todo', ['todoList'])
+  const { todo_get, todo_toggle, todo_clear }: any = 
     useActions('todo', ['todo_get', 'todo_toggle', 'todo_clear'])
 
   todo_get()

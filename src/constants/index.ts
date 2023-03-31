@@ -7,7 +7,7 @@ export default {
   TODO_ADD: 'TODO_ADD',
   TODO_ADD_SUCCESS: 'TODO_ADD_SUCCESS',
   
-  SHOW_ALL: '',
+  SHOW_ALL: 'all',
   SHOW_COMPLETED: 1,
   SHOW_INCOMPLETE: 0,
 

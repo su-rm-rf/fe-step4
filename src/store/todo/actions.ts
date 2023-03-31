@@ -4,7 +4,7 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://localhost:8602'
 
 export default {
-  set_todo: ({ commit }, text) => {
+  todo_set: ({ commit }, text) => {
     commit(constants.TODO_ADD, text)
   },
 

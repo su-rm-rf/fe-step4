@@ -2,7 +2,13 @@ import { createNamespacedHelpers, useStore } from "vuex"
 import { mapMutations } from "vuex"
 import useMapper from './useMapper'
 
-export function useMutations(moduleName: any, mapper=undefined) {
+/**
+ * 封装mapMutations的hook
+ * @param moduleName [xxx] 或 'xxx'
+ * @param mapper undefined 或 [xxx]
+ * @returns { xxx: fn }
+ */
+export function useMutations(moduleName: any, mapper: any=undefined) {
   let mapperFn = mapMutations
   const mapName = 'mapMutations'
   if (typeof moduleName === 'string' && moduleName.length > 0) {

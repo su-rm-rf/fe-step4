@@ -24,6 +24,7 @@
     
 后端：
   Koa2
+  TypeORM
   Mysql
 ```
 
@@ -52,6 +53,8 @@ test                        --- 测试
 ```
 
 > component, store 都按照业务功能模块划分
+
+> 在component中最好不要直接commit(mutation)，而是通过dispatch(action)，然后在action中调用commit(mutation)
 
 
 # 后端组织结构

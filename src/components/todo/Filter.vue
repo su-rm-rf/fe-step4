@@ -2,8 +2,8 @@
   import constants from '@/constants'
   import { useState, useActions } from '@/hooks'
 
-  const { todo_filter }:any = useActions('todo', ['todo_filter'])
-  const { filter }:any = useState('todo', ['filter'])
+  const { todo_filter }: any = useActions('todo', ['todo_filter'])
+  const { filter }: any = useState('todo', ['filter'])
 </script>
 
 <template>

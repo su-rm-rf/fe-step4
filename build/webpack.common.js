@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const webpack = require('webpack')
 
+const isDev = process.env.NODE_ENV === 'development'
+
 module.exports = {
   entry: './src/main.tsx',
   output: {
@@ -22,13 +24,14 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'ts-loader',
         options: {
-          appendTsSuffixTo: [/\.vue$/]
+          appendTsSuffixTo: [/\.vue$/],
+          transpileOnly: true,
         }
       },
       {
         test: /.s?css$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'postcss-loader',
@@ -69,6 +72,7 @@ module.exports = {
       title: 'fe-step2'
     }),
     new webpack.DefinePlugin({
+      'process.env.BASE_ENV': JSON.stringify(process.env.BASE_ENV),
       __VUE_OPTIONS_API__: true,
       __VUE_PROD_DEVTOOLS__: false
     })

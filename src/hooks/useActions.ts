@@ -2,7 +2,7 @@ import { createNamespacedHelpers, useStore } from "vuex"
 import { mapActions } from "vuex"
 import useMapper from './useMapper'
 
-export function useActions(moduleName: any, mapper=undefined) {
+export function useActions(moduleName: any, mapper: any=undefined) {
   let mapperFn = mapActions
   const mapName = 'mapActions'
   if (typeof moduleName === 'string' && moduleName.length > 0) {

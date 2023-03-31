@@ -14,7 +14,7 @@ body {
     a {
       flex: 1;
       text-decoration: none;
-      &.active {
+      &.router-link-active, &.active {
         color: #f00;
       }
     }
