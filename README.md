@@ -25,30 +25,46 @@
 后端：
   Koa2
   Mysql
-
 ```
 
-# 组织结构
+# 前端组织结构
 ```
-前端：
-  build                       --- 构建脚本
-  public                      --- 公共资源
-  src
-    actions                   --- action creators
-    components                --- UI组件
-    containers                --- 容器组件
-    constants                 --- 常量
-    reducers                  --- reducer
-    router                    --- 路由
-    store                     --- store
-    styles                    --- 样式
-    utils                     --- 工具
-    App.tsx
-    main.tsx
-  test                        --- 测试
+build                       --- 构建脚本
+dist                        --- 打包生成
+public                      --- 公共资源
+src
+  components                --- UI组件
+  constants                 --- 常量
+  hooks                     --- 自定义hook
+  router                    --- 路由
+  store                     --- store
+    subModule               --- 子模块
+    actions.ts
+    getters.ts
+    index.ts
+    mutations.ts
+  styles                    --- 样式
+  utils                     --- 工具
+  App.vue
+  main.tsx
+  shims-vue.d.ts
+test                        --- 测试
 ```
 
 > component, store 都按照业务功能模块划分
+
+
+# 后端组织结构
+```
+src
+  constants            --- 常量
+  controllers          --- 控制器
+  db                   --- 数据库
+  router               --- 路由
+  utils                --- 工具
+  server.ts
+test
+```
 
 # 技术拆解
 ```
