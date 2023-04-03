@@ -9,7 +9,7 @@
 
   let text = computed({
     get() {
-      return store.state.todo.todo.text
+      return store.state.todo._todo.text
     },
     set(value) {
       todo_set(value)

@@ -9,13 +9,13 @@ const Todo = {
   strict: process.env.NODE_ENV !== 'production',
   state() {
     return {
-      todo: {
+      _todo: {
         text: '',
         completed: 0
       },
       filter: constants.SHOW_ALL,
+      todo: {},
       todoList: [],
-      about: 'about-test',
     }
   },
 

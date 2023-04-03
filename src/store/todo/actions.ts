@@ -14,6 +14,13 @@ export default {
     })
   },
 
+  todo_detail: ({ commit }, id) => {
+    commit(constants.TODO_DETAIL_START)
+    axios.get(`/todo/${id}`).then(res => {
+      commit(constants.TODO_DETAIL, res.data.data)
+    })
+  },
+
   todo_add: ({ commit, dispatch }, text) => {
     axios.post('/todo/add', {
       text,
@@ -23,13 +30,18 @@ export default {
     })
   },
 
+  todo_save: (context, todo) => {
+    return new Promise<void>((resolve, reject) => {
+      axios.post('/todo/update', todo).then(res => {
+        resolve()
+      })
+    })
+  },
+
   todo_filter: ({ commit }, filter) => {
     commit(constants.TODO_FILTER, filter)
-    axios.get('/todo/list', {
-      params: {
-        completed: filter
-      }
-    }).then(res => {
+    filter = filter === constants.SHOW_ALL ? '' : filter
+    axios.get(`/todo/list?completed=${filter}`).then(res => {
       commit(constants.TODO_GET, res.data.data)
     })
   },
@@ -40,6 +52,14 @@ export default {
       completed: todo.completed === 0 ? 1 : 0
     }).then(res => {
       dispatch('todo_filter', state.filter)
+    })
+  },
+
+  todo_delete: ({ dispatch }, id) => {
+    axios.post('/todo/delete', {
+      id
+    }).then(res => {
+      dispatch('todo_get')
     })
   },
 

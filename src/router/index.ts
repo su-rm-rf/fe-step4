@@ -1,27 +1,43 @@
+import store from '@/store'
 import { createRouter, createWebHistory } from 'vue-router'
-
-import Dashboard from '@/components/Dashboard.vue'
-import Todo from '@/components/todo/index.vue'
-import About from '@/components/About.vue'
 
 const routes = [
   {
     path: '/',
-    component: Dashboard,
+    component: () => import('@/components/Dashboard.vue'),
   },
   {
     path: '/todo',
-    component: Todo
+    component: () => import('@/components/todo/index.vue'),
+  },
+  {
+    path: '/todo/:id',
+    component: () => import('@/components/todo/Detail.vue'),
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/todo/edit/:id',
+    component: () => import('@/components/todo/Edit.vue'),
+    meta: {
+      auth: true
+    }
   },
   {
     path: '/about',
-    component: About
+    component: () => import('@/components/About.vue')
   },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  // console.log(store.state)
+  next()
 })
 
 export default router

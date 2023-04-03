@@ -6,7 +6,7 @@
     align-items: center;
     textarea {
       flex: 4;
-      min-height: 1rem;
+      min-height: 2rem;
       padding: .1rem;
       margin-right: .4rem;
     }
@@ -37,9 +37,48 @@
   .todo-list {
     li {
       line-height: .8rem;
+      display: flex;
+      justify-content: space-between;
       &.completed {
-        text-decoration: line-through;
+        .text {
+          text-decoration: line-through;
+        }
       }
+      .handler {
+        a {
+          margin: 0 .2rem;
+          font-size: .26rem;
+        }
+      }
+    }
+    > button {
+      margin-top: 3vh;
+    }
+  }
+}
+.todo-detail {
+  width: 80vw;
+  margin: .4rem auto;
+  line-height: .8rem;
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    label {
+      flex: 1;
+    }
+    textarea, span {
+      flex: 2;
+    }
+    textarea {
+      min-height: 2rem;
+      padding: .1rem;
+    }
+    button {
+      line-height: .8rem;
+      width: 100%;
+      font-size: .4rem;
+      margin-top: .4rem;
     }
   }
 }
