@@ -6,7 +6,7 @@ const dev_config = {
   mode: 'development',
   devtool: 'eval-cheap-module-source-map',
   devServer: {
-    port: 8221,
+    port: 8421,
     hot: true,
     historyApiFallback: true,
     proxy: {
