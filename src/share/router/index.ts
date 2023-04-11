@@ -1,4 +1,4 @@
-import store from '@/store'
+// import store from '../store'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
@@ -30,14 +30,17 @@ const routes = [
   },
 ]
 
-const router = createRouter({
-  history: createWebHistory(),
+// const router = createRouter({
+//   history: createWebHistory(),
+//   routes
+// })
+
+// router.beforeEach((to, from, next) => {
+//   // console.log(store.state)
+//   next()
+// })
+
+export default (history) => createRouter({
+  history,
   routes
 })
-
-router.beforeEach((to, from, next) => {
-  // console.log(store.state)
-  next()
-})
-
-export default router

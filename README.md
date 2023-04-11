@@ -4,12 +4,14 @@
 ```
 
 > 纯手工从0到1编码，没有使用脚手架 <br/><br/>
-> [前端GitHub地址](https://github.com/su-rm-rf/fe-step2) <br/>
+> [前端GitHub地址](https://github.com/su-rm-rf/fe-step4) <br/>
 > [后端GitHub地址](https://github.com/su-rm-rf/node_server)
 
-> 前端运行: npm run dev <br/>
-> 后端运行: npm run server <br/><br/>
-> 访问: http://localhost:8221/todo
+> 前端运行: <br/>
+> npm run dev <br/>
+> npm run ssr <br/><br/>
+> 后端运行: npm run dev <br/>
+> 访问: http://localhost:8421/todo
 
 # 技术栈
 ```
@@ -24,6 +26,9 @@
   状态管理：Vuex
   CSS处理器：Sass、Less、PostCSS
   UI框架：ElementPlus
+
+SSR:
+  框架：Koa
     
 后端：
   框架：Koa
@@ -37,24 +42,26 @@ build                       --- 构建脚本
 dist                        --- 打包生成
 public                      --- 公共资源
 src
-  components                --- UI组件
-  constants                 --- 常量
-  hooks                     --- 自定义hook
-  router                    --- 路由
-  store                     --- store
-    subModule               --- 子模块
+  client
+    components                --- UI组件
+    constants                 --- 常量
+    hooks                     --- 自定义hook
+    styles                    --- 样式
+    utils                     --- 工具
+  server
+  share
+    router                    --- 路由
+    store                     --- store
+      subModule               --- 子模块
+        actions.ts
+        getters.ts
+        index.ts
+        mutations.ts
       actions.ts
       getters.ts
       index.ts
       mutations.ts
-    actions.ts
-    getters.ts
-    index.ts
-    mutations.ts
-  styles                    --- 样式
-  utils                     --- 工具
-  App.vue
-  main.tsx
+    App.vue
   shims-vue.d.ts
 test                        --- 测试
 ```

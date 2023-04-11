@@ -1,0 +1,34 @@
+@import url('./reset.scss');
+
+body {
+  font-size: .32rem;
+}
+
+.layout {
+  position: relative;
+  .content_body {
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .nav_header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .98rem;
+    line-height: .98rem;
+    border-top: .02rem solid #ccc;
+    background: #fff;
+    display: flex;
+    a {
+      text-align: center;
+      flex: 1;
+      text-decoration: none;
+      &.router-link-active, &.active {
+        color: #f00;
+      }
+    }
+  }
+}
+
+@import url('./todo.scss');

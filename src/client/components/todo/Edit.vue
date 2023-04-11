@@ -25,7 +25,7 @@
 </script>
 
 <template>
-  <div class="todo-detail">
+  <div class="todo_detail">
     <ul>
       <li>
         <label>ID: </label>

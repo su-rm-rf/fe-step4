@@ -1,17 +1,17 @@
 <script setup lang="ts">
-
+  import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="app">
-    <nav class="nav-header">
+  <div class="layout">
+    <div class="content_body">
+      <RouterView />
+    </div>
+    <nav class="nav_header">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/todo">Todo</RouterLink>
       <RouterLink to="/about">About</RouterLink>
     </nav>
-    <div class="content-body">
-      <RouterView />
-    </div>
   </div>
 </template>
 

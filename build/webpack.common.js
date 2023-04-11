@@ -3,16 +3,11 @@ const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const webpack = require('webpack')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
-  entry: './src/main.tsx',
-  output: {
-    path: resolve(__dirname, '../dist'),
-    filename: 'static/[name].[chunkhash:8].js',
-    publicPath: '/'
-  },
   module: {
     rules: [
       {
@@ -31,7 +26,7 @@ module.exports = {
       {
         test: /.s?css$/,
         use: [
-          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'postcss-loader',
@@ -59,17 +54,23 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.vue', '.js', '.json', '.scss'],
     alias: {
-      '@': join(__dirname, '../src')
+      '@': join(__dirname, '../src/client')
     }
   },
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'static/[name].[chunkhash:8].css'
+      // filename: 'static/[name].[chunkhash:8].css'
+      filename: 'main.css'
     }),
-    new HtmlWebpackPlugin({
-      template: resolve(__dirname, '../public/index.html'),
-      title: 'fe-step2'
+    // new HtmlWebpackPlugin({
+    //   template: resolve(__dirname, '../public/index.html'),
+    //   title: 'fe-step2'
+    // }),
+    new CopyPlugin({
+      patterns: [
+        { from: resolve(__dirname, '../public'), to: resolve(__dirname, '../dist')}
+      ]
     }),
     new webpack.DefinePlugin({
       'process.env.BASE_ENV': JSON.stringify(process.env.BASE_ENV),

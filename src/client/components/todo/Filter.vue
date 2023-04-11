@@ -18,7 +18,7 @@
 </script>
 
 <template>
-  <ul class="todo-filter">
+  <ul class="todo_filter">
     <li :class="{ active: filter === constants.SHOW_ALL }"
       @click="() => todo_filter(constants.SHOW_ALL)"
     >All</li>

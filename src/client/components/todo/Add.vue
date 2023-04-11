@@ -26,7 +26,7 @@
 </script>
 
 <template>
-  <div class="todo-add">
+  <div class="todo_add">
     <textarea v-model="text"></textarea>
     <button @click="add">Add</button>
   </div>

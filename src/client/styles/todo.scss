@@ -1,7 +1,7 @@
-.todo-app {
+.todo_app {
   width: 90vw;
   margin: .4rem auto;
-  .todo-add {
+  .todo_add {
     display: flex;
     align-items: center;
     textarea {
@@ -15,7 +15,7 @@
       height: .6rem;
     }
   }
-  .todo-filter {
+  .todo_filter {
     display: flex;
     li {
       line-height: .6rem;
@@ -34,7 +34,7 @@
       }
     }
   }
-  .todo-list {
+  .todo_list {
     li {
       line-height: .8rem;
       display: flex;
@@ -56,7 +56,7 @@
     }
   }
 }
-.todo-detail {
+.todo_detail {
   width: 90vw;
   margin: .4rem auto;
   line-height: .8rem;

@@ -20,7 +20,7 @@
 </script>
 
 <template>
-  <div class="todo-list">
+  <div class="todo_list">
     <ul>
       <li v-for="todo in todoList" 
         :class="todo.completed === 1 ? 'completed' : ''"

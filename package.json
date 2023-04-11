@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "vite": "vite",
-    "dev": "cross-env NODE_ENV=development BASE_ENV=development webpack serve -c ./build/webpack.dev.js",
+    "dev-old": "cross-env NODE_ENV=development BASE_ENV=development webpack serve -c ./build/webpack.dev.js",
+    "dev": "cross-env NODE_ENV=development BASE_ENV=development webpack -c ./build/webpack.dev.js --watch",
     "build": "cross-env NODE_ENV=development BASE_ENV=development webpack -c ./build/webpack.prod.js",
     "analyzer": "cross-env NODE_ENV=development BASE_ENV=development webpack --analyze -c ./build/webpack.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon --exec ts-node-esm ./src/server/index.tsx",
+    "ssr": "nodemon ./dist/static/server.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +22,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.21.0",
     "babel-loader": "^8.3.0",
+    "copy-webpack-plugin": "^9.1.0",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^3.4.1",
     "html-webpack-plugin": "^5.5.0",
@@ -37,12 +41,15 @@
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
     "axios": "^1.3.4",
     "element-plus": "^2.3.2",
+    "koa": "^2.14.1",
+    "koa-static": "^5.0.0",
     "typescript": "^5.0.2",
     "vite": "^4.2.1",
     "vue": "^3.2.47",

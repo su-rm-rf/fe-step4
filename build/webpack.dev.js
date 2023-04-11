@@ -1,22 +1,30 @@
 const { resolve } = require('path')
 const { merge } = require('webpack-merge')
 const common = require("./webpack.common")
+const nodeExternals = require('webpack-node-externals')
 
-const dev_config = {
+const client = merge(common, {
   mode: 'development',
   devtool: 'eval-cheap-module-source-map',
-  devServer: {
-    port: 8421,
-    hot: true,
-    historyApiFallback: true,
-    proxy: {
-
-    }
-  },
-  cache: {
-    type: 'filesystem',
-    cacheDirectory: resolve(__dirname, '../dist/.temp_cache')
+  entry: './src/client/index.tsx',
+  output: {
+    path: resolve(__dirname, '../dist/static'),
+    filename: 'client.js',
+    publicPath: '/'
   }
-}
+})
 
-module.exports = merge(common, dev_config)
+const server = merge(common, {
+  mode: 'development',
+  entry: './src/server/index.tsx',
+  output: {
+    path: resolve(__dirname, '../dist/static'),
+    filename: 'server.js',
+    publicPath: '/'
+  },
+  target: 'node',
+  externals: [nodeExternals()]
+})
+
+
+module.exports = [client, server]

@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div class="todo-app">
+  <div class="todo_app">
     <Add />
     <Filter />
     <List />

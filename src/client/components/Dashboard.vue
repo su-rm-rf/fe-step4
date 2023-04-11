@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    dashboard
+    Dashboard
   </div>
 </template>
 

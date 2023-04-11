@@ -37,7 +37,7 @@
 </script>
 
 <template>
-  <div class="todo-about">About
+  <div class="todo_about">About
     <!-- {{ ss1.length }}
     <button @click="toggle">toggle</button>
     {{ todo }}
