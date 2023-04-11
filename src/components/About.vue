@@ -37,12 +37,12 @@
 </script>
 
 <template>
-  <div class="todo-about">
-    {{ ss1.length }}
+  <div class="todo-about">About
+    <!-- {{ ss1.length }}
     <button @click="toggle">toggle</button>
     {{ todo }}
     {{ state.todoList.value.length }} -
-    {{ todoList.length }}
+    {{ todoList.length }} -->
   </div>
 </template>
 

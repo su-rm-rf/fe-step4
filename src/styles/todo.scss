@@ -1,5 +1,5 @@
 .todo-app {
-  width: 80vw;
+  width: 90vw;
   margin: .4rem auto;
   .todo-add {
     display: flex;
@@ -45,7 +45,7 @@
         }
       }
       .handler {
-        a {
+        a, button {
           margin: 0 .2rem;
           font-size: .26rem;
         }
@@ -57,7 +57,7 @@
   }
 }
 .todo-detail {
-  width: 80vw;
+  width: 90vw;
   margin: .4rem auto;
   line-height: .8rem;
   li {
