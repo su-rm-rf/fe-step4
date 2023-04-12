@@ -38,9 +38,9 @@ SSR:
 
 # 前端组织结构
 ```
-build                       --- 构建脚本
-dist                        --- 打包生成
-public                      --- 公共资源
+build                         --- 构建脚本
+dist                          --- 打包生成
+public                        --- 公共资源
 src
   client
     components                --- UI组件
@@ -61,9 +61,9 @@ src
       getters.ts
       index.ts
       mutations.ts
-    App.vue
+    App.vue                   --- 共用模板
   shims-vue.d.ts
-test                        --- 测试
+test                          --- 测试
 ```
 
 > component, store 都按照业务功能模块划分

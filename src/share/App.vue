@@ -1,5 +1,8 @@
 <script setup lang="ts">
-  import { RouterLink, RouterView } from 'vue-router'
+  import { useState } from '@/hooks';
+import { RouterLink, RouterView } from 'vue-router'
+
+  const { loading }: any = useState(['loading'])
 </script>
 
 <template>
@@ -12,6 +15,7 @@
       <RouterLink to="/todo">Todo</RouterLink>
       <RouterLink to="/about">About</RouterLink>
     </nav>
+    <div class="loading" v-if="loading">处理中</div>
   </div>
 </template>
 
